@@ -19,7 +19,7 @@ const Header = () => {
                 <input 
                     type="text"  
                     placeholder='search' 
-                    className=' bg-transparent outline-none w-24 sm:w-64 md:w-auto'
+                    className=' bg-transparent outline-none w-25 sm:w-64 md:w-auto'
                 />
 
                 <FaSearch />
