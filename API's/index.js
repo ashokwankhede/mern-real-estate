@@ -9,8 +9,7 @@ dotenv.config();
 
 mongoose.connect(process.env.MONGO_URL, {
     dbName: 'real-estate-mern', 
-    useNewUrlParser: true,
-    useUnifiedTopology: true
+    useNewUrlParser: true
 }).then(() => {
     console.log("Connected to the MongoDB!");
 }).catch((error) => {
@@ -27,4 +26,15 @@ app.listen(port, () => {
 });
 
 app.use("/api/user",userRoute);
-app.use('/auth',userAuth);
+app.use('/api/auth',userAuth);
+
+app.use((err,req,res,next) => {
+    const statuscode = err.statuscode || 500;
+    const message = err.message || 'Internal server error';
+    return res.status(statuscode).json({
+        success:false,
+        statuscode,
+        message,
+    });
+  });
+  

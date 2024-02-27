@@ -11,6 +11,13 @@
 
 *{
   font-family: FuturaPT-Book;
+  background: rgb(241,245,241);
 }
 
-
+.custom-toaster {
+  position: fixed;
+  z-index: 99;
+  inset: 0px;
+  pointer-events: none;
+  background: transparent;
+}

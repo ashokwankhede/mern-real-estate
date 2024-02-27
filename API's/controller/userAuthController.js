@@ -2,7 +2,7 @@ import User from '../models/userModels.js'
 import bcrypt from 'bcryptjs'
 
 
-export const userAuthentication = async (req,res)=>{
+export const userAuthentication = async (req,res,next)=>{
     try{
     const {username,email,password} = req.body;
     console.log(`Received registration request for username: ${username}, email: ${email}, password: ${password}`);
@@ -16,9 +16,6 @@ export const userAuthentication = async (req,res)=>{
     }
     catch (err){
         console.log(err);
-        res.status(409).json({
-            status:false,
-            message:"User is already exist!"
-        })
+        next(err);
     }
 };

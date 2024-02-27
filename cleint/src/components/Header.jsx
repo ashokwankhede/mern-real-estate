@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
  
 const Header = () => {
   return (
-    <header className='bg-slate-300 shadow-md'>
+    <header className='bg-[#f1faee] shadow-md'>
        
-        <div className="flex justify-between items-center max-w-6xl mx-auto p-4">
+        <div className="bg-[#f1faee] flex justify-between items-center max-w-6xl mx-auto p-4">
             <Link to="/">
-                <h1 className='font-bold text-sm sm:text-xl flex flex-wrap'>
+                <h1 className=' font-bold text-sm sm:text-xl flex flex-wrap'>
                     <span className='text-slate-500'>Ashok Wankhede</span>
                     <span className='text-slate-700'>&nbsp; Real Estate</span>
                 </h1>
             </Link>
             <form action="" 
-                className='bg-slate-100 p-3 rounded-lg flex items-center'
+                className='p-3 rounded-lg flex items-center'
             >
                 <input 
                     type="text"  

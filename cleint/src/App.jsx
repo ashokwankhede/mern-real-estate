@@ -7,11 +7,22 @@ import About from './pages/About';
 import Profile from './pages/Profile';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
-
+import {Toaster} from 'react-hot-toast';
+import "./index.css"
 const App = () => {
   return (
     <>
+     <Toaster
+      position="bottom-left"
+      toastOptions={{
+          success: {
+                theme: {
+                    primary: '#4aed88',
+                },
+            },
+      }}
+      containerClassName='custom-toaster' 
+      ></Toaster>
       <Router>
         <Header />
         <Routes>
@@ -21,7 +32,7 @@ const App = () => {
           <Route path='/about' element={<About   />} />
           <Route path='/profile' element={<Profile   />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Router>
     </>
   )
