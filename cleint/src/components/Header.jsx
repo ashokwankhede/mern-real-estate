@@ -1,36 +1,23 @@
 import React from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import "./style/Header.css"
  
 const Header = () => {
   return (
-    <header className='bg-[#f1faee] shadow-md'>
-       
-        <div className="bg-[#f1faee] flex justify-between items-center max-w-6xl mx-auto p-4">
-            <Link to="/">
-                <h1 className=' font-bold text-sm sm:text-xl flex flex-wrap'>
-                    <span className='text-slate-500'>Ashok Wankhede</span>
-                    <span className='text-slate-700'>&nbsp; Real Estate</span>
-                </h1>
-            </Link>
-            <form action="" 
-                className='p-3 rounded-lg flex items-center'
-            >
-                <input 
-                    type="text"  
-                    placeholder='search' 
-                    className=' bg-transparent outline-none w-25 sm:w-64 md:w-auto'
-                />
-
-                <FaSearch />
-            </form>
-
+    <header className="header-content">
+        {/* <img src=".\image-removebg-preview.png" alt="logo img" className='logo'></img> */}
+        <Link to="/" className="header-title">RealEstateVista</Link>
+        <div className="header-search-bar">
+        <FaSearch className='search-icon'/>
+            <input type="text" name="" id="" className="search-bar" placeholder="Seach or type for places"/>
+        </div>
+        <div className="header-sign-container">
             <ul className='flex gap-4 pl-2'>
-                <Link to="/about"  className='hidden sm:inline text-slate-900 hover:underline' >About</Link>
-                <Link to="/profile" className='hidden sm:inline text-slate-900 hover:underline'>Profile</Link>
-                <Link to="/sign-in"className='text-slate-900 hover:underline'>Sign-In</Link>
+                    <Link to="/about"   className='link-li' >About</Link>
+                    <Link to="/profile" className='link-li' >Profile</Link>
+                    <Link to="/sign-up" className='link-li'>Sign-Up</Link>
             </ul>
-
         </div>
     </header>
   )

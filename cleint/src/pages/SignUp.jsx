@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import toast, {Toaster} from 'react-hot-toast';
+import { Link,useNavigate } from 'react-router-dom';
+import "./styles/signup.css"
 const SignUp = () => {
   const [formData,setFormData] = useState({});
   const [error,setError] = useState(null);
   const [loading,setLoading] = useState(false);
+  const navigate = useNavigate();
   const handelChange = (e) => {
     setFormData({
       ...formData,
@@ -33,33 +36,39 @@ const SignUp = () => {
     if (data.status ===false){
       setLoading(false);
     }else if (data.status===true){
-      toast.success('User created successfully')
+      toast.success(data.message)
+      navigate("/sign-in")
   }
     setLoading(false);
   };
   return (
-    <div>
-      
-      <h1 className='text-3xl text-center font-semibold my-7'>Sign Up</h1>
-        <form action="" className='flex flex-col gap-4 items-center justify-center'>
-          <input type="text" placeholder='username' 
-          className='outline-teal-200 border p-3 rounded-lg max-w-lg sm:w-80'
-          onChange={handelChange} id = "username" onKeyDown={submitEvent}
-          />
-          <input type="text" placeholder='email' 
-          className='outline-teal-200 border p-3 rounded-lg w-100 sm:w-80'
-          onChange={handelChange} id = "email" onKeyDown={submitEvent}
-          />
-          <input type="password" placeholder='password' 
-          className='outline-teal-200 border p-3 rounded-lg w-100 sm:w-80'
-          onChange={handelChange} id="password" fdprocessedid="jf1c9" autoComplete="current-password" onKeyDown={submitEvent}
-          />
-          <button
-            className="select-none rounded-lg bg-green-500 py-3 px-6 text-center align-middle  font-bold uppercase text-white shadow-md shadow-green-500/20 transition-all hover:shadow-lg hover:shadow-green-500/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-            type="button" onClick={handelSubmit}
-            >{loading ? "loading":"Sign-up" }</button>
-        </form>
-      </div>
+    <div className="container">
+        <div className="sign-up-form">
+            <h1 className='signup-title'>Sign Up</h1>
+            <form className="inputs-container">
+                <input 
+                  className="sign-up-inpt" type="text" placeholder="Name"
+                  onChange={handelChange} id ="username" onKeyDown={submitEvent}
+                />
+
+                <input 
+                  className="sign-up-inpt" type="email"  placeholder="Email"
+                  onChange={handelChange} id= "email" onKeyDown={submitEvent}
+                />
+                <input 
+                  className="sign-up-inpt" type="password"  placeholder="Password"
+                  onChange={handelChange} id="password" fdprocessedid="jf1c9" autoComplete="current-password" onKeyDown={submitEvent}
+
+                />
+                <div className="button-container">
+                    <button className="btn google-button">Google Sign-Up</button>
+                    <button className="btn sign-up-button" onClick={handelSubmit}>{loading ? "loading":"Sign-up" }</button>
+                </div>
+                <p className="sign-up-text">Already have an account? &nbsp; <Link to="/sign-up" className='nav-a'>signIn</Link></p>
+            </form>
+            <svg className="bottom-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff5500" fill-opacity="1" d="M0,224L120,224C240,224,480,224,720,192C960,160,1200,96,1320,64L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
+        </div>
+    </div>
   )
 }
 

@@ -1,0 +1,134 @@
+.container{
+    margin-top: 10rem;
+}
+
+.sign-up-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 35%;
+    background: #FFFFFF;
+    margin-left: 45%;
+    height: 60vh;
+    border-radius:20px;
+    position: relative;
+    box-shadow: 1px 10px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 8%;
+}
+
+.sign-up-inpt{
+    height: 2.5rem;
+    width: 70%;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background: #ececec;
+    text-align:center;
+    font-size:1rem;
+    letter-spacing:0.5px
+
+}
+
+.sign-up-inpt::placeholder {
+    text-align: center;
+}
+
+.sign-up-inpt:hover {
+    border:1px solid #FC6736
+}
+
+
+.bottom-svg {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    border-bottom-left-radius: 20px; /* Adjust as needed */
+    border-bottom-right-radius: 20px;
+}
+
+.button-container{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    justify-content:space-between;
+    gap: 30px;
+}
+
+.google-button{
+    background:#FC6736;
+    border:none;
+    color:white
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.sign-up-button {
+    color: #FC6736;
+    background-color: transparent;
+    background-image: none;
+    border-color: #FC6736;
+}
+
+.sign-up-button:hover {
+    color: white;
+    background: #FC6736;
+    border-color: #FC6736;
+}
+
+.sign-up-text{
+    margin-right:26%;
+    font-size:1.1rem
+}
+
+.nav-a{
+    color:#FF8911
+}
+.signup-title{
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
+
+
+@media (max-width: 768px) {
+    .sign-up-form {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .sign-up-inpt {
+        width: 90%;
+    }
+
+    .sign-up-text {
+        margin-right: 0;
+        font-size: 0.9rem;
+    }
+}

@@ -11,7 +11,11 @@
 
 *{
   font-family: FuturaPT-Book;
-  background: rgb(241,245,241);
+  
+}
+
+body{
+  background-color: #F5F5F5 
 }
 
 .custom-toaster {

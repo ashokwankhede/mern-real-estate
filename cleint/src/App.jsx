@@ -6,14 +6,13 @@ import SignUp from './pages/SignUp';
 import About from './pages/About';
 import Profile from './pages/Profile';
 import Header from './components/Header';
-import Footer from './components/Footer';
 import {Toaster} from 'react-hot-toast';
 import "./index.css"
 const App = () => {
   return (
     <>
      <Toaster
-      position="bottom-left"
+      position="top-center"
       toastOptions={{
           success: {
                 theme: {

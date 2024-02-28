@@ -3,7 +3,6 @@ import userRoute from './routes/userRoutes.js';
 import userAuth  from './routes/authUser.js';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-
 dotenv.config();
 
 
