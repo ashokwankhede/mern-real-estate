@@ -72,13 +72,18 @@
 }
 
 .link-li{
-    color:#FF8911
+    color:#FF9209;
+}
+
+.link-li:hover{
+    color:#FC6736;
+    border-bottom: 2px solid #FC6736;
 }
 .search-icon{
     width: 10%;
     margin-right: -15%;
     z-index: 99999
-}
+}   
 
 @media (max-width: 768px) {
     .header-search-bar {

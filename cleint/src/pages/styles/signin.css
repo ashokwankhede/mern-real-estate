@@ -1,0 +1,107 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.signin-container {
+    background-color: white;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    width: 34%;
+    height: 40vh;
+    margin-top: 0%;
+    z-index: 999;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10px;    
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width:100%;
+    margin-bottom: 5%;
+}
+
+.input-box{
+    width:70%;
+    margin-left:15%;
+    background: #ececec;
+    height: 2.5rem;
+    border-radius: 14px;
+    text-align:center;
+    font-size:1rem;
+    letter-spacing:0.5px;
+    border:none;
+    outline: none;
+}
+
+.title-signin {
+    font-size:2rem;
+    font-weight: 700;
+}
+
+.submit-button{
+    background: #FF9209;
+    border:none;
+    color:white;
+}
+
+.btn-signin {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    width:70%;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    margin-left: 15%;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.input-box:hover {
+    border:1px solid #FC6736;
+}
+
+.btn-signin:hover{
+    background:#FC6736;
+}
+
+.sign-up-link{
+    color: #FF9209;
+}
+
+.sign-up-link:hover{
+    color:#FC6736;
+    border-bottom: 2px solid #FC6736;
+}
+
+/* Media Query for Mobile */
+@media screen and (max-width: 768px) {
+    .signin-container {
+        width: 80%; /* Adjusted width for smaller screens */
+        height: auto; /* Allowing height to be flexible */
+    }
+    
+    .input-box {
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .btn-signin {
+        width: 90%;
+        margin-left: 5%;
+    }
+}
