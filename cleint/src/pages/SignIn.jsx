@@ -57,11 +57,11 @@ const SignIn = () => {
         </h1>
         <form class="input-wrapper">
             <input  
-              type="text" class="input-box"  id="email"
+              type="text" class="input-box"  id="email" required
               placeholder='Email' onChange={handelChange} onKeyDown={submitEvent}
             />
             <input 
-              type="password" class="input-box"  id='password'
+              type="password" class="input-box"  id='password' required
               placeholder='Password' onChange={handelChange} onKeyDown={submitEvent}
             />
             <button className="submit-button btn-signin" onClick={handelSubmit}>{loading? "laoding":"SignIn"}</button>
