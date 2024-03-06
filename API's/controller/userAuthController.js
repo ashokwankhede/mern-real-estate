@@ -33,6 +33,7 @@ export const userAuthentication = async (req,res,next)=>{
 };
 
 export const signIn = async (req,res,next) => {
+    console.log("start sign in");
     try{
     const {email,password} = req.body;
     console.log(`Email: ${email}, Passowrd: ${password}`)
@@ -54,4 +55,46 @@ export const signIn = async (req,res,next) => {
     catch (error){
         next(error);
     }
-}
+};
+
+export const google = async (req, res,next) => {
+    try {
+        const {name,email,photoURL} = req.body;
+        const user = await User.findOne({email: email});
+        if (user) { 
+            const token = jwt.sign({id: user._id},process.env.JWT_TOKEN);
+            const {password:pass,...rest} = user._doc;
+            const updatedRest = {
+                ...rest,
+                status: true,
+                message:"Signed in successfully"
+              };
+            res.cookie('access_token',token,{httpOnly:true}).status(200).json(updatedRest)
+            
+
+        } else {
+            const {name,email,photoURL} = req.body;
+            const generatedPassword = Math.random().toString(36).slice(-8) + Math.random().toString(36).slice(-8);
+            const hashedPassword = bcrypt.hashSync(generatedPassword,10);
+            const newUser = new User({username:name.split().join("")+Math.random().toString(36).slice(-4),email,avatar:photoURL,password:hashedPassword});
+            await newUser.validate();
+            await newUser.save();
+            const token = jwt.sign({id: newUser._id},process.env.JWT_TOKEN);
+            const {password:pass,...rest} = newUser._doc;
+            const updatedRest = {
+                ...rest,
+                status: true,
+                message:"User saved successfully"
+              };
+            res 
+               .cookie('access_token',token,{httpOnly:true})
+               .statusCode(200)
+               .json(updatedRest);
+        }
+
+    } catch (error) {
+        next(error);
+    }
+
+};
+

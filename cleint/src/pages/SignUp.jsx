@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { Link,useNavigate } from 'react-router-dom';
+import OAuth from '../components/OAuth';
 import "./styles/signup.css"
+
+
 const SignUp = () => {
   const [formData,setFormData] = useState({});
   const [error,setError] = useState(null);
@@ -62,9 +65,10 @@ const SignUp = () => {
 
                 />
                 <div className="button-container">
-                    <button className="btn google-button">Google Sign-Up</button>
+                    <OAuth className="btn"/>
                     <button className="btn sign-up-button" onClick={handelSubmit}>{loading ? "loading":"Sign-up" }</button>
                 </div>
+                
             </form>
             <svg className="bottom-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff5500" fill-opacity="1" d="M0,224L120,224C240,224,480,224,720,192C960,160,1200,96,1320,64L1440,32L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z"></path></svg>
             <div className='text'>

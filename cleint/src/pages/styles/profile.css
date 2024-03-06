@@ -1,0 +1,33 @@
+.profile-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top:5vh
+}
+
+.update-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    gap: 20px;
+    width: 40%;
+    background: #FFFFFF;
+    height: 60vh;
+    border-radius: 20px;
+}
+
+.inpt-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:50px
+}
+
+.profile-input{
+    border:1px solid black
+}

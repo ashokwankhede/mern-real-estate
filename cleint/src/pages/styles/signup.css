@@ -1,6 +1,7 @@
 .container {
-    margin-top: 10rem;
+    margin-top: 5%;
     display: flex;
+    line-height: 1;
     align-items: center;
     justify-content: center;
 }
@@ -23,7 +24,7 @@
 .inputs-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: space-between;
     gap: 20px;
     width: 80%; /* Adjusted width */
     margin-bottom: 0%;
@@ -65,11 +66,11 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 30px;
+    width: 100%;
 }
 
 .google-button {
-    background: #FC6736;
-    border: none;
+    background: #FF9209;
     color: white;
 }
 
@@ -80,6 +81,7 @@
     font-weight: 400;
     line-height: 1.5;
     text-align: center;
+    /* width: 100%; */
     text-decoration: none;
     white-space: nowrap;
     vertical-align: middle;
@@ -90,10 +92,10 @@
 }
 
 .sign-up-button {
-    color: #FC6736;
+    color: #FF8911;
     background-color: transparent;
     background-image: none;
-    border-color: #FC6736;
+    border-color: #FF8911;
 }
 
 .sign-up-button:hover {
@@ -129,20 +131,36 @@
 /* Media Query for Mobile */
 @media screen and (max-width: 768px) {
     .container {
-        margin-top: 5rem; /* Adjusted margin-top */
+        margin-top: 10%;
+        max-height:100vh;
+        height: 60vh;
     }
+    .sign
 
+    .btn {
+        width:100%;
+    }
+    .button-container{
+        gap:10px;
+        width: 100%;
+        height: auto;
+    }
+    .btn{
+        width: 100%;
+    }
     .sign-up-form {
-        width: 80%; /* Adjusted width for smaller screens */
-        height: auto; /* Allowing height to be flexible */
+        width: 80%;
+        height: 55vh; 
+    }
+    .signup-title{
+        font-size: 1.2rem;
     }
 
     .inputs-container {
-        width: 90%; /* Adjusted width for smaller screens */
+        width: 90%; 
     }
-
     .text {
-        margin-left: 10%; /* Adjusted margin-left for smaller screens */
-        bottom: 0; /* Adjusted bottom position for smaller screens */
+        margin-left: 10%;
+        bottom: 11px;
     }
 }

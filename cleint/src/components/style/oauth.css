@@ -1,0 +1,31 @@
+
+
+
+.google-btn{
+    color:white;
+    background-color: #FF9209 !important;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    width: 70%;
+    border-radius:6px;
+}
+
+.google-btn:hover{
+    background: #FC6736 !important;
+}
+
+@media screen and (max-width: 768px){
+
+    .btn-google{
+        width: 300px;
+        max-width: 400px;
+        border-radius: 6px;
+    }
+}

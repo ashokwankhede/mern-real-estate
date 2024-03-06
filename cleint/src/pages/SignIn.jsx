@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import toast from 'react-hot-toast';
-import "./styles/signin.css";
 import { useDispatch,useSelector } from 'react-redux';
 import { signinStart,signinFailure,signinSuccess } from '../redux/user/userSlice';
+
+import OAuth from '../components/OAuth';
+import "./styles/signin.css";
+
 
 
 const SignIn = () => {
@@ -55,7 +58,9 @@ const SignIn = () => {
         <h1 className="title-signin">
           Sign In
         </h1>
+        
         <form class="input-wrapper">
+        {/* <p>Welcome Back</p> */}
             <input  
               type="text" class="input-box"  id="email" required
               placeholder='Email' onChange={handelChange} onKeyDown={submitEvent}
@@ -64,7 +69,8 @@ const SignIn = () => {
               type="password" class="input-box"  id='password' required
               placeholder='Password' onChange={handelChange} onKeyDown={submitEvent}
             />
-            <button className="submit-button btn-signin" onClick={handelSubmit}>{loading? "laoding":"SignIn"}</button>
+            <button className="btn-signin btn-main" onClick={handelSubmit}>{loading? "laoding":"SignIn"}</button>
+            <OAuth />
         </form> 
     </div>
       <p className="text-para">Not have an account?&nbsp; <Link to="/sign-up" className='sign-up-link'>SIgn Up</Link></p>
