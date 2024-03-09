@@ -4,30 +4,212 @@
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-    margin-top:5vh
+    margin-top:13%;
+    height: 80vh;
+    max-height: 100vh;
 }
 
 .update-form{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 2vh;
-    gap: 20px;
+    margin-top: 3vh;
+    gap: 30px;
     width: 40%;
     background: #FFFFFF;
     height: 60vh;
+    max-height: 100vh;
     border-radius: 20px;
 }
 
+.profileImg{
+    height: 70px !important; 
+    width: 70px !important;
+    margin-left: 1px;
+    margin-top: 1px;
+}
+
+.profile-img-div{
+
+    width: 74px;
+    height: 74px;
+    background: #FFFFFF;
+    border-radius: 100%;
+    margin-top: -25vh;
+}
+
+.update-form > h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: -15px;
+    margin-top: -15%;
+}
+
 .inpt-wrapper{
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap:50px
+    gap:25px;
+    margin-bottom: -10%;
 }
 
 .profile-input{
-    border:1px solid black
+    width: 70%;
+    height: 5.5vh;
+    border-radius: 6px;
+    outline: none;
+    background: #F0F0F0;
+    text-align: center;
+}
+
+.profile-input:hover{
+    border:1.5px solid #FF9209
+}
+
+.btn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 77%;
+    margin-bottom: 0px;
+}
+.p-btn {
+    border: 1px solid;
+    border-radius: 5px;
+    height: 5.5vh;
+    text-align: center;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    color: #FF9209;
+    cursor: pointer;
+    border: 1px solid #FF9209;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.list-btn{
+    width: 70%;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #FF9209;
+    height: 5.5vh;
+    border-radius: 6px;
+    cursor: pointer;
+    padding-top:6px;
+}
+
+.update-btn {
+    min-width:100px;
+    width: 40%;
+    cursor: pointer;
+}
+
+
+.cancel-btn {
+    margin-top: 0px !important;
+    padding-top: 6px;
+    min-width: 100px;
+    width: 40%;
+}
+
+.options{
+    display:flex;
+    justify-content: space-between;
+}
+
+.options {
+    display: flex;
+    width: 37%;
+    justify-content: space-between;
+    margin-top: 5px;
+    color: #FC6736;
+    cursor: pointer;
+}
+.options:hover{
+    border-bottom:2px solid #FC6736;
+}
+
+
+.lists-span{
+    margin-top: 20px;
+    color:#BAB86C
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .profile-container{
+        height: 60vh;
+        margin-top: 16%;
+        height: 100vh;
+        max-height: 100vh;
+    }
+
+    .profileImg{
+        height: 50px !important; 
+        width: 50px !important;
+        margin-top: 1px;
+        margin-left: 1px;
+    }
+
+    .update-form > h2{
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-top: -15%;
+        margin-bottom: -50px;
+    }
+    .update-form {
+       width: 90%;
+       height: auto;
+       height: 60vh;
+       margin-top: 2vh;
+     }
+    
+        
+    .profile-img-div{
+        width: 54px;
+        height: 54px;
+        background: #FFFFFF;
+        border-radius: 100%;
+        margin-top: -20vh;
+        
+    }
+
+    .inpt-wrapper {
+        margin-top: 10%;
+       flex-direction: column;
+       gap: 20px;
+     }
+   
+    .profile-input {
+       width: 90%;
+       margin-bottom: 10px;
+     }
+   
+    .btn-wrapper {
+       width: 90%;
+       justify-content: center;
+     }
+   
+    .p-btn {
+       width: 100%;
+       margin-bottom: 10px;
+    }
+    .list-btn{
+        margin-top: -15px;
+        width: 90%;
+    }
 }

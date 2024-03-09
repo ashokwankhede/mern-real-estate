@@ -32,7 +32,7 @@ const Header = () => {
         </div>
         <div className="header-sign-container">
             <ul className='nav-ul' id="ul">
-              <li><Link to="/"   className='link-li' id="l-li" >Home</Link></li>
+              <li className='first-li'><Link to="/"   className='link-li' id="l-li" >Home</Link></li>
               <li><Link to="/about"   className='link-li' id="l-li" >About</Link></li>
               <li><Link to="/profile">{
                       currentUser? (<Avatar src={currentUser.avatar} name={currentUser.username} round={true} className='avatar'size='40' value="100" />) :(
@@ -44,7 +44,7 @@ const Header = () => {
             <label className="icon" id="icon">
               <FaListAlt className="icon-bar"></FaListAlt>
             </label>
-        </div>
+            </div>
     </nav>
   )
 }

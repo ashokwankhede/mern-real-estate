@@ -32,10 +32,10 @@ const OAuth = () => {
         dispatch(signinSuccess(data));
         navigate("/")
       } else {
-        console.error('Failed to sign in with Google');
+        toast.error('Failed to sign in with Google');
       }   
     } catch (error) {
-      console.log("Could not sign in with Google", error);
+      toast.error("Could not sign in with Google", error);
     }
   };
 

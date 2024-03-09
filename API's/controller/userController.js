@@ -1,12 +1,7 @@
 import {errorHandler} from '../utils/error.js';
 import bcrypt from 'bcryptjs';
 import User from '../models/userModels.js';
-
-export const test = (req,res)=>{
-    res.json({
-        message:"Hello Brothers!"
-    });
-};
+// import next from "../index.js"
 
 export const updateUser = async (req, res, next) => {
     try {
@@ -37,3 +32,19 @@ export const updateUser = async (req, res, next) => {
         next(error);
     }
 };
+
+export const deleteUser = async (req, res) => {
+    if (req.user.id !== req.params.id) return next(errorHandler(401, false, "You can only delete your own account."));
+    try{
+        await User.findByIdAndUpdate(req.user.id);
+        res.status(200).json({ status: true, message: "User has been deleted successfully"  }).clearCookie("access_token");
+    }
+    catch (error) {
+        next(error);
+    };
+};
+
+export const LogOutUser = async (req, res) => {
+    res.clearCookie("access_token").status(200).json({ status: true, message: "Logged out successfully"});
+};
+
